@@ -19,4 +19,6 @@ use App\Http\Controllers\RatingController;
 
 Route::get('/', [BookController::class, 'index']);
 Route::get('/top-author', [BookController::class, 'topAuthor']);
+Route::Post('/search', [BookController::class, 'search']);
+Route::Post('/add-rating', [RatingController::class, 'add_rating']);
 Route::get('/rating', [RatingController::class, 'index']);

@@ -11,6 +11,9 @@ class Rating extends Model
 
     protected $table = 'rating';
 
+    protected $fillable = ['book_id','rate'];
+    protected $guarded = 'id';
+
     public function book()
     {
         return $this->belongsTo(Book::class);

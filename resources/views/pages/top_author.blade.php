@@ -1,7 +1,7 @@
 @extends('layouts.app');
 
 @section('content');
-<h1>List of Books</h1>
+<h1>Famous Authors</h1>
 
 <table class="table table-hover">
   <thead>
@@ -12,9 +12,9 @@
     </tr>
   </thead>
   <tbody>
-      @foreach($authors as $author)
+      @foreach($authors as $no => $author)
       <tr>
-      <th scope="row"></th>
+      <th scope="row">{{$no + 1}}</th>
       <td>{{$author->author_name}}</td>
       <td>{{$author->total_ratings}}</td>
 

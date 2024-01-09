@@ -4,8 +4,8 @@
 <h1>List of Books</h1>
 <div class="row">
     <div class="col-3">
-    <form method="post" action="#" enctype="multipart/form-data">
-
+    <form method="post" action="/search" enctype="multipart/form-data">
+    {{csrf_field()}}
     <div class="mb-3">
       <label for="show" class="form-label">List Shown</label>
       <select id="show" class="form-select" name="show" require>
@@ -39,9 +39,9 @@
     </tr>
   </thead>
   <tbody>
-      @foreach($books as $book)
+      @foreach($books as $no => $book)
       <tr>
-      <th scope="row"></th>
+      <th scope="row">{{$no + 1}}</th>
       <td>{{$book->book_name}}</td>
       <td>{{$book->author_name}}</td>
       <td>{{$book->category_name}}</td>

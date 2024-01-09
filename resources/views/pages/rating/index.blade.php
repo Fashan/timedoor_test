@@ -2,11 +2,15 @@
 
 @section('content');
 <h1>Rating</h1>
-
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="row">
     <div class="col-3">
-    <form>
-
+    <form  method="post" action="/add-rating" enctype="multipart/form-data">
+      {{csrf_field()}}
     <div class="mb-3">
       <label for="bookauthor" class="form-label">Name Author</label>
       <select id="bookauthor" class="form-select" name="author">
